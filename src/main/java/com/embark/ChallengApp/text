@@ -1,0 +1,23 @@
+Application to store monthly challenges
+
+Get /challenges
+GET /challenges/{month}
+POST /challenges
+PUT /challenges/{id}
+DELETE /challenges/{id}
+
+//Jpa - jakarta persistance apior Java Persistant api- which allows to convert objects to tables
+so here the table name Challenge and attributes would be  would be id, month , description. Here in jpa if we already have an app and we have created classes we are going to work with objects, so with jpa we can get the class converted to table we do not have to write separate queries to make tables . and with jpa the queries te data gets easier. It is not the database it allows us to work with the database. It uses hibernate which requires default contructor to instatiate entities before populating them with the data in the database
+
+
+//React on S3 and springboot on ec2 and database in rds
+// RDS - Relational Daatabase System - It is a service for scaling, building a relational databse system on cloud and we can choose which sql we want like mysql, postgresql etc
+//Elastic compute cloud we can host our apps in the cloud it is a virtual server we we host our application, move source code over there and then the app runs in the cloud.we will use elastic beanstalk
+//Simple storage service - we can host our static files , images here in buckets
+
+
+//in rds create a db then easy create-postgresql- version of it then the template (free tier), name is challengeApp, then creddentials and a url will be generated which will be added "spring.datasource.url"
+//Choose elastic beanstalk- create application and follow the steps and select the jar file and single instance, then service access then for rds is being shown as we need access to the db so we will choose restore snapshot and the name of the rds snapshot. you will get a url and you need to open it on a new tab we will get error and in the configuration add server.port= 8085 and the app is posted
+
+//S3 for react in visual studio code change from the url the localhost to the url go t in the elastic beanstalk (for api call)
+run "npm run build" in the terminal and a processing will happen then a new folder called build will be added and we will push this into the s3 and enable static website hosting in the aws and use the policy of public acces else you will get 403 error
